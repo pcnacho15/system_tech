@@ -5,6 +5,7 @@ import { Stats } from "@/components/stats"
 import { CTA } from "@/components/cta"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { PartnersCarousel } from "@/components/clients-carousel"
 
 export default function Home() {
   return (
@@ -12,7 +13,8 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Stats />
+        <PartnersCarousel />
+        {/* <Stats /> */}
         <Services />
         <Technologies />
         <CTA />

@@ -1,7 +1,9 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Sparkles, Rocket, Code2, Cpu, Network, Database, Cloud } from "lucide-react"
+import clsx from "clsx";
+import { ArrowRight, Sparkles, Rocket, Code2, Cpu, Network, Database, Cloud, BrainCircuit } from "lucide-react"
+import Image from "next/image";
 import { useEffect, useState } from "react"
 
 type Star = {
@@ -28,16 +30,52 @@ export function Hero() {
   }, [])
 
   const orbitIcons = [
-    { icon: Rocket, color: "text-primary", borderColor: "border-primary/30", angle: 0 },
-    { icon: Code2, color: "text-cyan-500", borderColor: "border-cyan-500/30", angle: 60 },
-    { icon: Cpu, color: "text-purple-500", borderColor: "border-purple-500/30", angle: 120 },
-    { icon: Network, color: "text-primary", borderColor: "border-primary/30", angle: 180 },
-    { icon: Database, color: "text-cyan-500", borderColor: "border-cyan-500/30", angle: 240 },
-    { icon: Cloud, color: "text-purple-500", borderColor: "border-purple-500/30", angle: 300 },
-  ]
+    {
+      icon: Rocket,
+      color: "text-primary",
+      borderColor: "border-primary/30",
+      angle: 0,
+    },
+    {
+      icon: Code2,
+      color: "text-cyan-500",
+      borderColor: "border-cyan-500/30",
+      angle: 51,
+    },
+    {
+      icon: Cpu,
+      color: "text-purple-500",
+      borderColor: "border-purple-500/30",
+      angle: 102,
+    },
+    {
+      icon: Network,
+      color: "text-primary",
+      borderColor: "border-primary/30",
+      angle: 153,
+    },
+    {
+      icon: Database,
+      color: "text-cyan-500",
+      borderColor: "border-cyan-500/30",
+      angle: 204,
+    },
+    {
+      icon: Cloud,
+      color: "text-purple-500",
+      borderColor: "border-purple-500/30",
+      angle: 255,
+    },
+    {
+      icon: BrainCircuit,
+      color: "text-primary",
+      borderColor: "border-primary/30",
+      angle: 306,
+    },
+  ];
 
   return (
-    <section className="relative min-h-screen overflow-hidden pt-24">
+    <section className="relative min-h-screen overflow-hidden pt-14">
       <div className="absolute inset-0 bg-linear-to-b from-background via-background/95 to-background">
         {/* Animated stars */}
         {stars.map((star, i) => (
@@ -55,7 +93,7 @@ export function Hero() {
       </div>
 
       {/* Animated Background Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-size[4rem_4rem] mask-[radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
 
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute left-1/4 top-1/4 h-64 w-64 animate-float rounded-full bg-linear-to-br from-primary/30 to-purple-500/20 blur-3xl" />
@@ -64,7 +102,7 @@ export function Hero() {
       </div>
 
       <div className="container relative z-10 mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-center pt-20 pb-32">
+        <div className="grid lg:grid-cols-2 gap-12 items-center pb-32">
           <div className="max-w-2xl">
             {/* Badge */}
             <div
@@ -165,8 +203,15 @@ export function Hero() {
 
               <div className="absolute inset-0 flex items-center justify-center">
                 {/* Astronaut Image */}
-                <div className="relative z-20 w-48 h-48 md:w-64 md:h-64">
+                <div className="relative flex items-center justify-center z-20 w-48 h-48 md:w-64 md:h-64">
                   <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-purple-500/30 via-primary/20 to-cyan-500/30 blur-xl animate-pulse-slow" />
+                  <Image
+                    src="/icons/astronaut-gravity.svg"
+                    alt="Astronaut"
+                    width={250}
+                    height={250}
+                    className="animate-float"
+                  />
                 </div>
 
                 <div
@@ -205,7 +250,7 @@ export function Hero() {
                   return (
                     <div
                       key={index}
-                      className={`absolute p-3 rounded-lg border ${item.borderColor} bg-background/80 backdrop-blur-sm animate-orbit-float`}
+                      className={` absolute p-3 rounded-full border hover:scale-110 ${item.borderColor} bg-background/80 backdrop-blur-sm animate-orbit-float transition-transform duration-700`}
                       style={{
                         left: `calc(50% + ${x}%)`,
                         top: `calc(50% + ${y}%)`,
@@ -213,7 +258,7 @@ export function Hero() {
                         animationDelay: `${index * 0.5}s`,
                       }}
                     >
-                      <Icon/>
+                      <Icon />
                     </div>
                   );
                 })}

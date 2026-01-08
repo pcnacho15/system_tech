@@ -66,7 +66,7 @@ export function Services() {
             className={`mb-4 text-balance text-4xl font-bold text-foreground transition-all duration-700 md:text-5xl ${isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
           >
             Servicios que impulsan tu{" "}
-            <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-primary to-primary/60 bg-clip-text text-transparent">
               transformación digital
             </span>
           </h2>
@@ -83,10 +83,9 @@ export function Services() {
             return (
               <Card
                 key={index}
-                className={`group border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-700 hover:border-primary/50 hover:bg-card ${
+                className={`group cursor-default border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-200 hover:border-primary/50 hover:scale-105 hover:bg-card ${
                   isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
                 }`}
-                style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <CardHeader>
                   <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-all group-hover:bg-primary/20 group-hover:scale-110">
