@@ -9,10 +9,14 @@ import Image from "next/image";
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const goToWhatsApp = () => {
+    window.open("https://wa.link/za5ruf", "_blank");
+  };
+
   return (
     <>
       <header className="border-b border-border/40 bg-background/80 backdrop-blur-lg">
-        <div className="hidden md:flex justify-center gap-8 py-2 text-sm bg-background-info">
+        <div className="hidden md:flex justify-center gap-8 py-2 text-sm bg-background-info border-b border-border/40">
           <p className="flex items-center gap-2 cursor-default text-muted-foreground">
             <MapPin size={20} />
             Medellín, Antioquia, Colombia
@@ -69,7 +73,12 @@ export function Header() {
               Nosotros
             </a>
             <ThemeToggle />
-            <Button>Contactar</Button>
+            <Button
+              onClick={goToWhatsApp}
+              className="cursor-pointer"
+            >
+              Escríbenos
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}

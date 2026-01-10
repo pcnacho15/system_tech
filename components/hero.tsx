@@ -1,10 +1,21 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import clsx from "clsx";
-import { ArrowRight, Sparkles, Rocket, Code2, Cpu, Network, Database, Cloud, BrainCircuit } from "lucide-react"
+import {
+  ArrowRight,
+  Sparkles,
+  Rocket,
+  Code2,
+  Cpu,
+  Network,
+  Database,
+  Cloud,
+  BrainCircuit,
+} from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+import { Astronaut } from "./ui/astronaut";
 
 type Star = {
   left: string;
@@ -14,8 +25,8 @@ type Star = {
 };
 
 export function Hero() {
-  const [mounted, setMounted] = useState(false)
-   const [stars, setStars] = useState<Star[]>([]);
+  const [mounted, setMounted] = useState(false);
+  const [stars, setStars] = useState<Star[]>([]);
 
   useEffect(() => {
     setMounted(true);
@@ -27,7 +38,7 @@ export function Hero() {
     }));
 
     setStars(generated);
-  }, [])
+  }, []);
 
   const orbitIcons = [
     {
@@ -159,15 +170,15 @@ export function Hero() {
             >
               <Button
                 size="lg"
-                className="group gap-2 px-8"
+                className="group gap-2 px-8 cursor-pointer"
               >
                 Comenzar ahora
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button
                 size="lg"
-                variant="outline"
-                className="gap-2 px-8 bg-transparent"
+                // variant="outline"
+                className="gap-2 px-8 bg-gray-600 hover:bg-gray-600/90 text-white cursor-pointer"
               >
                 Ver servicios
               </Button>
@@ -205,13 +216,15 @@ export function Hero() {
                 {/* Astronaut Image */}
                 <div className="relative flex items-center justify-center z-20 w-48 h-48 md:w-64 md:h-64">
                   <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-purple-500/30 via-primary/20 to-cyan-500/30 blur-xl animate-pulse-slow" />
-                  <Image
+
+                  <Astronaut />
+                  {/* <Image
                     src="/icons/astronaut-gravity.svg"
                     alt="Astronaut"
                     width={250}
                     height={250}
                     className="animate-float"
-                  />
+                  /> */}
                 </div>
 
                 <div

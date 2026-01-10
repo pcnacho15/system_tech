@@ -1,7 +1,13 @@
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Mail } from "lucide-react"
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Mail } from "lucide-react";
 
 export function CTA() {
+  const sendEmail = () => {
+    window.location.href = "mailto:info@systemtech.com.co";
+  };
+
   return (
     <section className="relative py-24">
       <div className="container mx-auto px-6">
@@ -25,6 +31,7 @@ export function CTA() {
                 <Button
                   size="lg"
                   className="group gap-2 px-8 cursor-pointer"
+                  onClick={sendEmail}
                 >
                   <Mail className="h-4 w-4" />
                   Contactar ahora
@@ -32,8 +39,9 @@ export function CTA() {
                 </Button>
                 <Button
                   size="lg"
-                  variant="outline"
-                  className="px-8 cursor-pointer"
+                  variant="default"
+                  // onClick={sendEmail}
+                  className="px-8 cursor-pointer bg-gray-600 hover:bg-gray-600/90 text-white"
                 >
                   Ver casos de éxito
                 </Button>
