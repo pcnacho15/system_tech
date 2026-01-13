@@ -15,7 +15,7 @@ export function Header() {
 
   return (
     <>
-      <header className="border-b border-border/40 bg-background/80 backdrop-blur-lg">
+      <header className="relative z-50 border-b border-border/40 bg-background/80 backdrop-blur-lg">
         <div className="hidden md:flex justify-center gap-8 py-2 text-sm bg-background-info border-b border-border/40">
           <p className="flex items-center gap-2 cursor-default text-muted-foreground">
             <MapPin size={20} />
@@ -59,6 +59,12 @@ export function Header() {
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               Servicios
+            </a>
+            <a
+              href="#productos"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Productos
             </a>
             <a
               href="#tecnologias"

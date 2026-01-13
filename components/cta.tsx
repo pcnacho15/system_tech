@@ -37,14 +37,14 @@ export function CTA() {
                   Contactar ahora
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
-                <Button
+                {/* <Button
                   size="lg"
                   variant="default"
                   // onClick={sendEmail}
                   className="px-8 cursor-pointer bg-gray-600 hover:bg-gray-600/90 text-white"
                 >
                   Ver casos de éxito
-                </Button>
+                </Button> */}
               </div>
             </div>
           </div>

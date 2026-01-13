@@ -13,7 +13,6 @@ import {
   Cloud,
   BrainCircuit,
 } from "lucide-react";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Astronaut } from "./ui/astronaut";
 
@@ -27,6 +26,11 @@ type Star = {
 export function Hero() {
   const [mounted, setMounted] = useState(false);
   const [stars, setStars] = useState<Star[]>([]);
+
+    const goToWhatsApp = () => {
+      window.open("https://wa.link/za5ruf", "_blank");
+    };
+
 
   useEffect(() => {
     setMounted(true);
@@ -170,18 +174,19 @@ export function Hero() {
             >
               <Button
                 size="lg"
+                onClick={goToWhatsApp}
                 className="group gap-2 px-8 cursor-pointer"
               >
                 Comenzar ahora
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button
-                size="lg"
+              <a
+                href="#servicios"
                 // variant="outline"
-                className="gap-2 px-8 bg-gray-600 hover:bg-gray-600/90 text-white cursor-pointer"
+                className="rounded-lg text-sm p-2.5 gap-2 px-8 bg-gray-600 hover:bg-gray-600/90 text-white cursor-pointer"
               >
                 Ver servicios
-              </Button>
+              </a>
             </div>
           </div>
 
@@ -214,7 +219,7 @@ export function Hero() {
 
               <div className="absolute inset-0 flex items-center justify-center">
                 {/* Astronaut Image */}
-                <div className="relative flex items-center justify-center z-20 w-48 h-48 md:w-64 md:h-64">
+                <div className="relative flex items-center justify-center z-20">
                   <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-purple-500/30 via-primary/20 to-cyan-500/30 blur-xl animate-pulse-slow" />
 
                   <Astronaut />
