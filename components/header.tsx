@@ -107,6 +107,12 @@ export function Header() {
                 Servicios
               </a>
               <a
+                href="#productos"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Productos
+              </a>
+              <a
                 href="#tecnologias"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
